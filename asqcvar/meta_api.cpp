@@ -67,9 +67,9 @@ static META_FUNCTIONS gMetaFunctionTable = {
 // Description of plugin
 plugin_info_t Plugin_info = {
 	META_INTERFACE_VERSION,	// ifvers
-	"AngelScriptCURL",	// name
-	"1.4",	// version
-	"2022",	// date
+	"AngelScriptQueryCvar",	// name
+	"1.0",	// version
+	"2023",	// date
 	"hzqst",	// author
 	"https://github.com/hzqst/metamod-fallguys",	// url
 	"ASQCVAR",	// logtag, all caps please
