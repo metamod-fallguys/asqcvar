@@ -59,10 +59,7 @@ void ASQCvar_CallQueryCvar2Callback(void *pPlayer, int request_id, const char *c
 		str_val.dtor();
 	}
 
-	if (ASEXT_CASRefCountedBaseClass_InternalRelease(callback->getReference()))
-	{
-		ASEXT_DereferenceCASFunction(callback);
-	}
+	ASEXT_DereferenceCASFunction(callback);
 
 	g_QueryCvar2Callbacks.erase(itor);
 }
