@@ -41,250 +41,252 @@
 #include "serverdef.h"
 #include "asqcvar.h"
 
-static DLL_FUNCTIONS gFunctionTable = 
-{
-	NULL,					// pfnGameInit
-	NULL,					// pfnSpawn
-	NULL,					// pfnThink
-	NULL,					// pfnUse
-	NULL,				// pfnTouch
-	NULL,					// pfnBlocked
-	NULL,					// pfnKeyValue
-	NULL,					// pfnSave
-	NULL,					// pfnRestore
-	NULL,			// pfnSetAbsBox
+static DLL_FUNCTIONS gFunctionTable =
+    {
+        NULL, // pfnGameInit
+        NULL, // pfnSpawn
+        NULL, // pfnThink
+        NULL, // pfnUse
+        NULL, // pfnTouch
+        NULL, // pfnBlocked
+        NULL, // pfnKeyValue
+        NULL, // pfnSave
+        NULL, // pfnRestore
+        NULL, // pfnSetAbsBox
 
-	NULL,					// pfnSaveWriteFields
-	NULL,					// pfnSaveReadFields
+        NULL, // pfnSaveWriteFields
+        NULL, // pfnSaveReadFields
 
-	NULL,					// pfnSaveGlobalState
-	NULL,					// pfnRestoreGlobalState
-	NULL,					// pfnResetGlobalState
+        NULL, // pfnSaveGlobalState
+        NULL, // pfnRestoreGlobalState
+        NULL, // pfnResetGlobalState
 
-	NULL,					// pfnClientConnect
-	NULL,					// pfnClientDisconnect
-	NULL,					// pfnClientKill
-	NULL,					// pfnClientPutInServer
-	NULL,					// pfnClientCommand
-	NULL,					// pfnClientUserInfoChanged
-	NULL,					// pfnServerActivate
-	NULL,					// pfnServerDeactivate
+        NULL, // pfnClientConnect
+        NULL, // pfnClientDisconnect
+        NULL, // pfnClientKill
+        NULL, // pfnClientPutInServer
+        NULL, // pfnClientCommand
+        NULL, // pfnClientUserInfoChanged
+        NULL, // pfnServerActivate
+        NULL, // pfnServerDeactivate
 
-	NULL,					// pfnPlayerPreThink
-	NULL,					// pfnPlayerPostThink
+        NULL, // pfnPlayerPreThink
+        NULL, // pfnPlayerPostThink
 
-	NULL	,				// pfnStartFrame
-	NULL,					// pfnParmsNewLevel
-	NULL,					// pfnParmsChangeLevel
+        NULL, // pfnStartFrame
+        NULL, // pfnParmsNewLevel
+        NULL, // pfnParmsChangeLevel
 
-	NULL,					// pfnGetGameDescription
-	NULL,					// pfnPlayerCustomization
+        NULL, // pfnGetGameDescription
+        NULL, // pfnPlayerCustomization
 
-	NULL,					// pfnSpectatorConnect
-	NULL,					// pfnSpectatorDisconnect
-	NULL,					// pfnSpectatorThink
-	
-	NULL,					// pfnSys_Error
+        NULL, // pfnSpectatorConnect
+        NULL, // pfnSpectatorDisconnect
+        NULL, // pfnSpectatorThink
 
-	NULL,				// pfnPM_Move
-	NULL,					// pfnPM_Init
-	NULL,					// pfnPM_FindTextureType
-	
-	NULL,		// pfnSetupVisibility
-	NULL,					// pfnUpdateClientData
-	NULL,					// pfnAddToFullPack
-	NULL,					// pfnCreateBaseline
-	NULL,					// pfnRegisterEncoders
-	NULL,					// pfnGetWeaponData
-	NULL,					// pfnCmdStart
-	NULL,					// pfnCmdEnd
-	NULL,					// pfnConnectionlessPacket
-	NULL,					// pfnGetHullBounds
-	NULL,					// pfnCreateInstancedBaselines
-	NULL,					// pfnInconsistentFile
-	NULL,					// pfnAllowLagCompensation
+        NULL, // pfnSys_Error
+
+        NULL, // pfnPM_Move
+        NULL, // pfnPM_Init
+        NULL, // pfnPM_FindTextureType
+
+        NULL, // pfnSetupVisibility
+        NULL, // pfnUpdateClientData
+        NULL, // pfnAddToFullPack
+        NULL, // pfnCreateBaseline
+        NULL, // pfnRegisterEncoders
+        NULL, // pfnGetWeaponData
+        NULL, // pfnCmdStart
+        NULL, // pfnCmdEnd
+        NULL, // pfnConnectionlessPacket
+        NULL, // pfnGetHullBounds
+        NULL, // pfnCreateInstancedBaselines
+        NULL, // pfnInconsistentFile
+        NULL, // pfnAllowLagCompensation
 };
 
 void NewGameInit_Post(void)
 {
-	SET_META_RESULT(MRES_IGNORED);
+    SET_META_RESULT(MRES_IGNORED);
 }
 
 static DLL_FUNCTIONS gFunctionTable_Post =
-{
-	NULL,					// pfnGameInit
-	NULL,					// pfnSpawn
-	NULL,					// pfnThink
-	NULL,					// pfnUse
-	NULL,					// pfnTouch
-	NULL,					// pfnBlocked
-	NULL,					// pfnKeyValue
-	NULL,					// pfnSave
-	NULL,					// pfnRestore
-	NULL,					// pfnSetAbsBox
+    {
+        NULL, // pfnGameInit
+        NULL, // pfnSpawn
+        NULL, // pfnThink
+        NULL, // pfnUse
+        NULL, // pfnTouch
+        NULL, // pfnBlocked
+        NULL, // pfnKeyValue
+        NULL, // pfnSave
+        NULL, // pfnRestore
+        NULL, // pfnSetAbsBox
 
-	NULL,					// pfnSaveWriteFields
-	NULL,					// pfnSaveReadFields
+        NULL, // pfnSaveWriteFields
+        NULL, // pfnSaveReadFields
 
-	NULL,					// pfnSaveGlobalState
-	NULL,					// pfnRestoreGlobalState
-	NULL,					// pfnResetGlobalState
+        NULL, // pfnSaveGlobalState
+        NULL, // pfnRestoreGlobalState
+        NULL, // pfnResetGlobalState
 
-	NULL,					// pfnClientConnect
-	NULL,					// pfnClientDisconnect
-	NULL,					// pfnClientKill
-	NULL,					// pfnClientPutInServer
-	NULL,					// pfnClientCommand
-	NULL,					// pfnClientUserInfoChanged
-	NULL,					// pfnServerActivate
-	NULL,					// pfnServerDeactivate
+        NULL, // pfnClientConnect
+        NULL, // pfnClientDisconnect
+        NULL, // pfnClientKill
+        NULL, // pfnClientPutInServer
+        NULL, // pfnClientCommand
+        NULL, // pfnClientUserInfoChanged
+        NULL, // pfnServerActivate
+        NULL, // pfnServerDeactivate
 
-	NULL,					// pfnPlayerPreThink
-	NULL,					// pfnPlayerPostThink
+        NULL, // pfnPlayerPreThink
+        NULL, // pfnPlayerPostThink
 
-	NULL,					// pfnStartFrame
-	NULL,					// pfnParmsNewLevel
-	NULL,					// pfnParmsChangeLevel
+        NULL, // pfnStartFrame
+        NULL, // pfnParmsNewLevel
+        NULL, // pfnParmsChangeLevel
 
-	NULL,					// pfnGetGameDescription
-	NULL,					// pfnPlayerCustomization
+        NULL, // pfnGetGameDescription
+        NULL, // pfnPlayerCustomization
 
-	NULL,					// pfnSpectatorConnect
-	NULL,					// pfnSpectatorDisconnect
-	NULL,					// pfnSpectatorThink
+        NULL, // pfnSpectatorConnect
+        NULL, // pfnSpectatorDisconnect
+        NULL, // pfnSpectatorThink
 
-	NULL,					// pfnSys_Error
+        NULL, // pfnSys_Error
 
-	NULL,					// pfnPM_Move
-	NULL,					// pfnPM_Init
-	NULL,					// pfnPM_FindTextureType
+        NULL, // pfnPM_Move
+        NULL, // pfnPM_Init
+        NULL, // pfnPM_FindTextureType
 
-	NULL,					// pfnSetupVisibility
-	NULL,					// pfnUpdateClientData
-	NULL,					// pfnAddToFullPack
-	NULL,					// pfnCreateBaseline
-	NULL,					// pfnRegisterEncoders
-	NULL,					// pfnGetWeaponData
-	NULL,					// pfnCmdStart
-	NULL,					// pfnCmdEnd
-	NULL,					// pfnConnectionlessPacket
-	NULL,					// pfnGetHullBounds
-	NULL,					// pfnCreateInstancedBaselines
-	NULL,					// pfnInconsistentFile
-	NULL,					// pfnAllowLagCompensation
+        NULL, // pfnSetupVisibility
+        NULL, // pfnUpdateClientData
+        NULL, // pfnAddToFullPack
+        NULL, // pfnCreateBaseline
+        NULL, // pfnRegisterEncoders
+        NULL, // pfnGetWeaponData
+        NULL, // pfnCmdStart
+        NULL, // pfnCmdEnd
+        NULL, // pfnConnectionlessPacket
+        NULL, // pfnGetHullBounds
+        NULL, // pfnCreateInstancedBaselines
+        NULL, // pfnInconsistentFile
+        NULL, // pfnAllowLagCompensation
 };
 
-C_DLLEXPORT int GetEntityAPI2_Post(DLL_FUNCTIONS *pFunctionTable, int *interfaceVersion)
+C_DLLEXPORT int GetEntityAPI2_Post(DLL_FUNCTIONS* pFunctionTable, int* interfaceVersion)
 {
-	if (!pFunctionTable)
-	{
-		LOG_ERROR(PLID, "GetEntityAPI2_Post called with null pFunctionTable");
-		return FALSE;
-	}
-	else if (*interfaceVersion != INTERFACE_VERSION)
-	{
-		LOG_ERROR(PLID, "GetEntityAPI2_Post version mismatch; requested=%d ours=%d", *interfaceVersion, INTERFACE_VERSION);
-		//! Tell metamod what version we had, so it can figure out who is out of date.
-		*interfaceVersion = INTERFACE_VERSION;
-		return FALSE;
-	}
-	memcpy(pFunctionTable, &gFunctionTable_Post, sizeof(DLL_FUNCTIONS));
-	return TRUE;
+    if (!pFunctionTable)
+    {
+        LOG_ERROR(PLID, "GetEntityAPI2_Post called with null pFunctionTable");
+        return FALSE;
+    }
+    else if (*interfaceVersion != INTERFACE_VERSION)
+    {
+        LOG_ERROR(PLID, "GetEntityAPI2_Post version mismatch; requested=%d ours=%d", *interfaceVersion, INTERFACE_VERSION);
+        //! Tell metamod what version we had, so it can figure out who is out of date.
+        *interfaceVersion = INTERFACE_VERSION;
+        return FALSE;
+    }
+    memcpy(pFunctionTable, &gFunctionTable_Post, sizeof(DLL_FUNCTIONS));
+    return TRUE;
 }
 
-C_DLLEXPORT int GetEntityAPI2(DLL_FUNCTIONS *pFunctionTable, int *interfaceVersion)
+C_DLLEXPORT int GetEntityAPI2(DLL_FUNCTIONS* pFunctionTable, int* interfaceVersion)
 {
-	if(!pFunctionTable)
-	{
-		LOG_ERROR(PLID, "GetEntityAPI2 called with null pFunctionTable");
-		return FALSE;
-	}
-	else if(*interfaceVersion != INTERFACE_VERSION)
-	{
-		LOG_ERROR(PLID, "GetEntityAPI2 version mismatch; requested=%d ours=%d", *interfaceVersion, INTERFACE_VERSION);
-		//! Tell metamod what version we had, so it can figure out who is out of date.
-		*interfaceVersion = INTERFACE_VERSION;
-		return FALSE;
-	}
+    if (!pFunctionTable)
+    {
+        LOG_ERROR(PLID, "GetEntityAPI2 called with null pFunctionTable");
+        return FALSE;
+    }
+    else if (*interfaceVersion != INTERFACE_VERSION)
+    {
+        LOG_ERROR(PLID, "GetEntityAPI2 version mismatch; requested=%d ours=%d", *interfaceVersion, INTERFACE_VERSION);
+        //! Tell metamod what version we had, so it can figure out who is out of date.
+        *interfaceVersion = INTERFACE_VERSION;
+        return FALSE;
+    }
 
-	memcpy(pFunctionTable, &gFunctionTable, sizeof(DLL_FUNCTIONS));
-	return TRUE;
+    memcpy(pFunctionTable, &gFunctionTable, sizeof(DLL_FUNCTIONS));
+    return TRUE;
 }
 
 void NewGameShutdown(void)
 {
-	ASQCvar_Shutdown();
+    ASQCvar_Shutdown();
 
-	SET_META_RESULT(MRES_IGNORED);
+    SET_META_RESULT(MRES_IGNORED);
 }
 
-void NewCvarValue(const edict_t *pEnt, const char *value)
+void NewCvarValue(const edict_t* pEnt, const char* value)
 {
-	if (ASEXT_CallHook)
-	{
-		CString str_val = { 0 };
-		str_val.assign(value, strlen(value));
+    if (ASEXT_CallHook)
+    {
+        CString str_val = {0};
+        str_val.assign(value, strlen(value));
 
-		(*ASEXT_CallHook)(g_QueryCvarHook, 0, pEnt->pvPrivateData, &str_val);
+        (*ASEXT_CallHook)(g_QueryCvarHook, 0, pEnt->pvPrivateData, &str_val);
 
-		str_val.dtor();
-	}
+        str_val.dtor();
+    }
 
-	SET_META_RESULT(MRES_IGNORED);
+    SET_META_RESULT(MRES_IGNORED);
 }
 
-void NewCvarValue2(const edict_t *pEnt, int requestID, const char *cvarName, const char *value)
+void NewCvarValue2(const edict_t* pEnt, int requestID, const char* cvarName, const char* value)
 {
-	ASQCvar_CallQueryCvar2Callback(pEnt->pvPrivateData, requestID, cvarName, value);
+    ASQCvar_CallQueryCvar2Callback(pEnt->pvPrivateData, requestID, cvarName, value);
 
-	if (ASEXT_CallHook)
-	{
-		CString str_cvar = { 0 };
-		str_cvar.assign(cvarName, strlen(cvarName));
+    if (ASEXT_CallHook)
+    {
+        CString str_cvar = {0};
+        str_cvar.assign(cvarName, strlen(cvarName));
 
-		CString str_val = { 0 };
-		str_val.assign(value, strlen(value));
+        CString str_val = {0};
+        str_val.assign(value, strlen(value));
 
-		(*ASEXT_CallHook)(g_QueryCvar2Hook, 0, pEnt->pvPrivateData, requestID, &str_cvar, &str_val);
+        (*ASEXT_CallHook)(g_QueryCvar2Hook, 0, pEnt->pvPrivateData, requestID, &str_cvar, &str_val);
 
-		str_cvar.dtor();
-		str_val.dtor();
-	}
+        str_cvar.dtor();
+        str_val.dtor();
+    }
 
-	SET_META_RESULT(MRES_IGNORED);
+    SET_META_RESULT(MRES_IGNORED);
 }
 
 static NEW_DLL_FUNCTIONS gNewDllFunctionTable =
-{
-	// Called right before the object's memory is freed. 
-	// Calls its destructor.
-	NULL,
-	NewGameShutdown,
-	NULL,
+    {
+        // Called right before the object's memory is freed.
+        // Calls its destructor.
+        NULL,
+        NewGameShutdown,
+        NULL,
 
-	// Added 2005/08/11 (no SDK update):
-	NewCvarValue,//void(*pfnCvarValue)(const edict_t *pEnt, const char *value);
+        // Added 2005/08/11 (no SDK update):
+        NewCvarValue, //void(*pfnCvarValue)(const edict_t *pEnt, const char *value);
 
-	// Added 2005/11/21 (no SDK update):
-	//    value is "Bad CVAR request" on failure (i.e that user is not connected or the cvar does not exist).
-	//    value is "Bad Player" if invalid player edict.
-	NewCvarValue2,//void(*pfnCvarValue2)(const edict_t *pEnt, int requestID, const char *cvarName, const char *value);
+        // Added 2005/11/21 (no SDK update):
+        //    value is "Bad CVAR request" on failure (i.e that user is not connected or the cvar does not exist).
+        //    value is "Bad Player" if invalid player edict.
+        NewCvarValue2, //void(*pfnCvarValue2)(const edict_t *pEnt, int requestID, const char *cvarName, const char *value);
 };
 
 C_DLLEXPORT int GetNewDLLFunctions(NEW_DLL_FUNCTIONS* pNewDllFunctionTable,
-	int* interfaceVersion)
+                                   int*               interfaceVersion)
 {
-	if (!pNewDllFunctionTable) {
-		LOG_ERROR(PLID, "GetNewDLLFunctions called with null pFunctionTable");
-		return(FALSE);
-	}
-	else if (*interfaceVersion != NEW_DLL_FUNCTIONS_VERSION) {
-		LOG_ERROR(PLID, "GetNewDLLFunctions version mismatch; requested=%d ours=%d", *interfaceVersion, NEW_DLL_FUNCTIONS_VERSION);
-		//! Tell metamod what version we had, so it can figure out who is out of date.
-		*interfaceVersion = NEW_DLL_FUNCTIONS_VERSION;
-		return(FALSE);
-	}
-	memcpy(pNewDllFunctionTable, &gNewDllFunctionTable, sizeof(NEW_DLL_FUNCTIONS));
+    if (!pNewDllFunctionTable)
+    {
+        LOG_ERROR(PLID, "GetNewDLLFunctions called with null pFunctionTable");
+        return (FALSE);
+    }
+    else if (*interfaceVersion != NEW_DLL_FUNCTIONS_VERSION)
+    {
+        LOG_ERROR(PLID, "GetNewDLLFunctions version mismatch; requested=%d ours=%d", *interfaceVersion, NEW_DLL_FUNCTIONS_VERSION);
+        //! Tell metamod what version we had, so it can figure out who is out of date.
+        *interfaceVersion = NEW_DLL_FUNCTIONS_VERSION;
+        return (FALSE);
+    }
+    memcpy(pNewDllFunctionTable, &gNewDllFunctionTable, sizeof(NEW_DLL_FUNCTIONS));
 
-	return(TRUE);
+    return (TRUE);
 }
