@@ -1,51 +1,32 @@
-# asqcvar project
-project(asqcvar)
-
-# Define core source files
-set(ASQCVAR_SOURCES
-    asqcvar.cpp
-    dllapi.cpp
-    engine_api.cpp
-    engine_hook.cpp
-    h_export.cpp
-    meta_api.cpp
-    server_hook.cpp
-)
-
-# Windows-specific source files
-if(WIN32)
-    list(APPEND ASQCVAR_SOURCES dllmain.cpp)
+cmake_minimum_required(VERSION 3.21)
+option(FORMAT_VALIDATION_ONLY "Configure formatting without compilers or native dependencies" OFF)
+if(FORMAT_VALIDATION_ONLY)
+    project(FormatValidation LANGUAGES NONE)
+    include(cmake/FormatValidation.cmake)
+    return()
 endif()
+include(cmake/Metamod.cmake)
+project(asqcvar LANGUAGES C CXX)
+if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build configuration" FORCE)
+endif()
+include("${METAMOD_SOURCE_PATH}/cmake/SDK.cmake")
+include(cmake/ASExt.cmake)
 
-
-# Add include directories
-include_directories(
-    ${CMAKE_SOURCE_DIR}/asext/include
-    ${CMAKE_SOURCE_DIR}/thirdparty/angelscript-sdk/angelscript/include
+add_library(asqcvar SHARED
+    src/asqcvar.cpp
+    src/dllapi.cpp
+    src/engine_api.cpp
+    src/engine_hook.cpp
+    src/h_export.cpp
+    src/meta_api.cpp
+    src/server_hook.cpp
 )
-
-# Create shared library
-add_library(asqcvar SHARED ${ASQCVAR_SOURCES})
-
-# Set target properties
-set_target_properties(asqcvar PROPERTIES
-    PREFIX ""
-    OUTPUT_NAME "asqcvar"
-)
-
-# Windows-specific settings
+mmfg_configure_target(asqcvar)
+target_link_libraries(asqcvar PRIVATE ASExt::SDK)
 if(WIN32)
+    target_sources(asqcvar PRIVATE src/dllmain.cpp)
     target_compile_definitions(asqcvar PRIVATE ASQCVAR_EXPORTS)
 endif()
 
-# Link libraries
-if(UNIX)
-    target_link_libraries(asqcvar
-        dl
-        m
-    )
-    # Statically link libgcc and libstdc++ for better compatibility
-    set_target_properties(metamod PROPERTIES
-        LINK_FLAGS "-static-libgcc -static-libstdc++"
-    )
-endif() 
+include(cmake/FormatValidation.cmake)
