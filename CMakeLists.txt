@@ -29,5 +29,6 @@ if(WIN32)
     target_sources(asqcvar PRIVATE src/dllmain.cpp)
     target_compile_definitions(asqcvar PRIVATE ASQCVAR_EXPORTS)
 endif()
+mmfg_assign_source_groups(asqcvar)
 
 include(cmake/FormatValidation.cmake)
